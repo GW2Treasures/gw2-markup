@@ -1,0 +1,45 @@
+{
+  "name": "@gw2/markup-react",
+  "version": "1.0.0",
+  "description": "Render Guild Wars 2 markup as React elements",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/react.d.mts",
+      "default": "./dist/react.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown src/react.ts --minify",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "darthmaim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  },
+  "dependencies": {
+    "@gw2/markup-parser": "workspace:*",
+    "@gw2/markup-to-jsx": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.1.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

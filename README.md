@@ -9,6 +9,10 @@ This repository contains a collection of packages to work with Guild Wars 2® ma
 
 ### High level packages
 
+These packages are intended to be used for most common use cases. They combine the low level packages to provide a convenient API.
+
+- **[`@gw2/markup-react`](./packages/react/)**  
+  This package provides a React component that renders Guild Wars 2® markup.
 - **[`@gw2/markup-strip`](./packages/strip/)**  
   A utility that strips all markup from input strings.
 - **[`@gw2/markup-unified`](./packages/unified/)**  

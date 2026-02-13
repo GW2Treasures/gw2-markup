@@ -5,6 +5,8 @@ This package converts a Guild Wars 2® markup AST into JSX-compatible elements.
 
 ## Usage
 
+If you want to render markup in React, use the [`@gw2/markup-react`](../react/) package instead.
+
 Use this package if you want full control over how AST nodes are converted into elements for React, Preact, Solid, React Native, or any other JSX runtime.
 
 ```ts
