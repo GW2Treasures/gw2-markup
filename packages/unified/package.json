@@ -1,0 +1,49 @@
+{
+  "name": "unified",
+  "version": "1.0.0",
+  "description": "Unified processor for Guild Wars 2 Markup",
+  "exports": {
+    "./parse": {
+      "types": "./dist/parse.d.mts",
+      "default": "./dist/parse.mjs"
+    },
+    "./processor": {
+      "types": "./dist/processor.d.mts",
+      "default": "./dist/processor.mjs"
+    },
+    "./rehype": {
+      "types": "./dist/rehype.d.mts",
+      "default": "./dist/rehype.mjs"
+    },
+    "./stringify": {
+      "types": "./dist/stringify.d.mts",
+      "default": "./dist/stringify.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown src/parse.ts src/processor.ts src/rehype.ts src/stringify.ts --minify --dts"
+  },
+  "keywords": [],
+  "author": "darthmaim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/unified"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  },
+  "dependencies": {
+    "@gw2/markup-ast": "workspace:*",
+    "@gw2/markup-parser": "workspace:*",
+    "@gw2/markup-to-hast": "workspace:*",
+    "@gw2/markup-stringify": "workspace:*",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3"
+  }
+}

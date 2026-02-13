@@ -1,0 +1,8 @@
+{
+  "name": "@gw2/markup",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run -r build"
+  },
+  "license": "MIT"
+}

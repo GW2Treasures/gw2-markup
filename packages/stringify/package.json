@@ -1,0 +1,34 @@
+{
+  "name": "@gw2/markup-stringify",
+  "version": "1.0.0",
+  "description": "Stringify Guild Wars 2 Markup AST",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/stringify.d.mts",
+      "default": "./dist/stringify.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown src/stringify.ts --minify"
+  },
+  "keywords": [],
+  "author": "darthmaim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/stringify"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  },
+  "dependencies": {
+    "@gw2/markup-ast": "workspace:*"
+  },
+  "devDependencies": {
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3"
+  }
+}
