@@ -2,6 +2,7 @@
   "name": "@gw2/markup-to-hast",
   "version": "1.0.0",
   "description": "Convert Guild Wars 2 Markup AST to HAST",
+  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "hast", "html"],
   "type": "module",
   "exports": {
     ".": {
@@ -13,7 +14,6 @@
   "scripts": {
     "build": "tsdown src/index.ts --minify"
   },
-  "keywords": [],
   "author": "darthmaim",
   "license": "MIT",
   "repository": {

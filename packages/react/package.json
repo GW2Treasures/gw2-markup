@@ -2,6 +2,7 @@
   "name": "@gw2/markup-react",
   "version": "1.0.0",
   "description": "Render Guild Wars 2 markup as React elements",
+  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "react"],
   "type": "module",
   "exports": {
     ".": {
@@ -15,7 +16,6 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
-  "keywords": [],
   "author": "darthmaim",
   "license": "MIT",
   "repository": {

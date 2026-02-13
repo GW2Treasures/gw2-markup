@@ -2,6 +2,7 @@
   "name": "unified",
   "version": "1.0.0",
   "description": "Unified processor for Guild Wars 2 Markup",
+  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "unified"],
   "exports": {
     "./parse": {
       "types": "./dist/parse.d.mts",
@@ -28,7 +29,6 @@
   "scripts": {
     "build": "tsdown src/parse.ts src/processor.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
   },
-  "keywords": [],
   "author": "darthmaim",
   "license": "MIT",
   "repository": {

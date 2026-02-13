@@ -2,6 +2,7 @@
   "name": "@gw2/markup-ast",
   "version": "1.0.0",
   "description": "Types for Guild Wars 2 Markup AST",
+  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "unist"],
   "type": "module",
   "exports": {
     ".": {
@@ -12,7 +13,6 @@
   "files": [
     "src/ast.ts"
   ],
-  "keywords": ["gw2", "guild wars 2", "markup", "format", "tooltip", "ast"],
   "author": "darthmaim",
   "license": "MIT",
   "repository": {
