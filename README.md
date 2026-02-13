@@ -24,10 +24,12 @@ These packages operate on the AST and are the foundation for the high level pack
   A parser that converts markup into an AST.
 - **[`@gw2/markup-stringify`](./packages/stringify/)**  
   A stringifier that converts an AST back into markup.
-- **[`@gw2/markup-to-text`](./packages/to-text/)**  
-  A converter that converts an AST into plain text by stripping all markup.
 - **[`@gw2/markup-to-hast`](./packages/to-hast/)**  
   A converter that transforms the AST into HAST (Hypertext Abstract Syntax Tree) so it can be processed by tools like [rehype](https://github.com/rehypejs/rehype).
+- **[`@gw2/markup-to-jsx`](./packages/to-jsx/)**  
+  A converter that transforms the AST into JSX-compatible elements.
+- **[`@gw2/markup-to-text`](./packages/to-text/)**  
+  A converter that converts an AST into plain text by stripping all markup.
 
 
 ## Contributing
