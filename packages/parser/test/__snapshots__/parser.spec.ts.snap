@@ -1,0 +1,273 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parseGw2Markup invalid inputs > 'function' 1`] = `
+"() => {
+  }
+==================
+root[0] (1:1-1:1, 0-0)"
+`;
+
+exports[`parseGw2Markup invalid inputs > 'null' 1`] = `
+"null
+==================
+root[0] (1:1-1:1, 0-0)"
+`;
+
+exports[`parseGw2Markup invalid inputs > 'number' 1`] = `
+"1
+==================
+root[0] (1:1-1:1, 0-0)"
+`;
+
+exports[`parseGw2Markup invalid inputs > 'object' 1`] = `
+"[object Object]
+==================
+root[0] (1:1-1:1, 0-0)"
+`;
+
+exports[`parseGw2Markup invalid inputs > 'undefined' 1`] = `
+"undefined
+==================
+root[0] (1:1-1:1, 0-0)"
+`;
+
+exports[`parseGw2Markup snapshots > 'br tag' 1`] = `
+"before<br>after
+==================
+root[3] (1:1-1:16, 0-15)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 break (1:7-1:11, 6-10)
+└─2 text "after" (1:11-1:16, 10-15)"
+`;
+
+exports[`parseGw2Markup snapshots > 'closing tag with format description' 1`] = `
+"<c=@reminder>Contains ... Gang.</c=@reminder><br><br>Use ...
+==================
+root[4] (1:1-1:61, 0-60)
+├─0 color[1] (1:1-1:46, 0-45)
+│   │ format: "@reminder"
+│   └─0 text "Contains ... Gang." (1:14-1:32, 13-31)
+├─1 break (1:46-1:50, 45-49)
+├─2 break (1:50-1:54, 49-53)
+└─3 text "Use ..." (1:54-1:61, 53-60)"
+`;
+
+exports[`parseGw2Markup snapshots > 'color markup' 1`] = `
+"before<c=#bada55>content</c>after
+==================
+root[3] (1:1-1:34, 0-33)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:29, 6-28)
+│   │ format: "#bada55"
+│   └─0 text "content" (1:18-1:25, 17-24)
+└─2 text "after" (1:29-1:34, 28-33)"
+`;
+
+exports[`parseGw2Markup snapshots > 'malformed close tag c' 1`] = `
+"before<c=@test>content<c>after
+==================
+root[3] (1:1-1:31, 0-30)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:26, 6-25)
+│   │ format: "@test"
+│   └─0 text "content" (1:16-1:23, 15-22)
+└─2 text "after" (1:26-1:31, 25-30)"
+`;
+
+exports[`parseGw2Markup snapshots > 'malformed close tag c/' 1`] = `
+"before<c=@test>content<c/>after
+==================
+root[3] (1:1-1:32, 0-31)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:27, 6-26)
+│   │ format: "@test"
+│   └─0 text "content" (1:16-1:23, 15-22)
+└─2 text "after" (1:27-1:32, 26-31)"
+`;
+
+exports[`parseGw2Markup snapshots > 'malformed open tag (missing =)' 1`] = `
+"before<c@test>content</c>after
+==================
+root[3] (1:1-1:31, 0-30)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:26, 6-25)
+│   │ format: "@test"
+│   └─0 text "content" (1:15-1:22, 14-21)
+└─2 text "after" (1:26-1:31, 25-30)"
+`;
+
+exports[`parseGw2Markup snapshots > 'malformed open tag (missing @)' 1`] = `
+"before<c=test>content</c>after
+==================
+root[3] (1:1-1:31, 0-30)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:26, 6-25)
+│   │ format: "=test"
+│   └─0 text "content" (1:15-1:22, 14-21)
+└─2 text "after" (1:26-1:31, 25-30)"
+`;
+
+exports[`parseGw2Markup snapshots > 'malformed open tag (switched @=)' 1`] = `
+"before<c@=test>content</c>after
+==================
+root[3] (1:1-1:32, 0-31)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:27, 6-26)
+│   │ format: "@test"
+│   └─0 text "content" (1:16-1:23, 15-22)
+└─2 text "after" (1:27-1:32, 26-31)"
+`;
+
+exports[`parseGw2Markup snapshots > 'missing close color tag' 1`] = `
+"before<c=#bada55>content
+==================
+root[2] (1:1-1:25, 0-24)
+├─0 text "before" (1:1-1:7, 0-6)
+└─1 color[1] (1:7-1:25, 6-24)
+    │ format: "#bada55"
+    └─0 text "content" (1:18-1:25, 17-24)"
+`;
+
+exports[`parseGw2Markup snapshots > 'missing close format tag' 1`] = `
+"before<c=@test>content
+==================
+root[2] (1:1-1:23, 0-22)
+├─0 text "before" (1:1-1:7, 0-6)
+└─1 color[1] (1:7-1:23, 6-22)
+    │ format: "@test"
+    └─0 text "content" (1:16-1:23, 15-22)"
+`;
+
+exports[`parseGw2Markup snapshots > 'missing close tag in second segment' 1`] = `
+"before<c=@test1>content1</c>test<c=@test2>content2
+==================
+root[4] (1:1-1:51, 0-50)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:29, 6-28)
+│   │ format: "@test1"
+│   └─0 text "content1" (1:17-1:25, 16-24)
+├─2 text "test" (1:29-1:33, 28-32)
+└─3 color[1] (1:33-1:51, 32-50)
+    │ format: "@test2"
+    └─0 text "content2" (1:43-1:51, 42-50)"
+`;
+
+exports[`parseGw2Markup snapshots > 'mix of format and color markup' 1`] = `
+"before<c=@test>content1</c>middle<c=#bada55>content2</c>after
+==================
+root[5] (1:1-1:62, 0-61)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:28, 6-27)
+│   │ format: "@test"
+│   └─0 text "content1" (1:16-1:24, 15-23)
+├─2 text "middle" (1:28-1:34, 27-33)
+├─3 color[1] (1:34-1:57, 33-56)
+│   │ format: "#bada55"
+│   └─0 text "content2" (1:45-1:53, 44-52)
+└─4 text "after" (1:57-1:62, 56-61)"
+`;
+
+exports[`parseGw2Markup snapshots > 'multiline markup' 1`] = `
+"before<c=@test>content
+</c>after
+==================
+root[3] (1:1-2:10, 0-32)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[2] (1:7-2:5, 6-27)
+│   │ format: "@test"
+│   ├─0 text "content" (1:16-1:23, 15-22)
+│   └─1 break (1:23-2:1, 22-23)
+└─2 text "after" (2:5-2:10, 27-32)"
+`;
+
+exports[`parseGw2Markup snapshots > 'multiple occurrences' 1`] = `
+"before<c=@test>content1</c>middle<c=@test>content2</c>after
+==================
+root[5] (1:1-1:60, 0-59)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:28, 6-27)
+│   │ format: "@test"
+│   └─0 text "content1" (1:16-1:24, 15-23)
+├─2 text "middle" (1:28-1:34, 27-33)
+├─3 color[1] (1:34-1:55, 33-54)
+│   │ format: "@test"
+│   └─0 text "content2" (1:43-1:51, 42-50)
+└─4 text "after" (1:55-1:60, 54-59)"
+`;
+
+exports[`parseGw2Markup snapshots > 'named color' 1`] = `
+"before<c=@test>content</c>after
+==================
+root[3] (1:1-1:32, 0-31)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:27, 6-26)
+│   │ format: "@test"
+│   └─0 text "content" (1:16-1:23, 15-22)
+└─2 text "after" (1:27-1:32, 26-31)"
+`;
+
+exports[`parseGw2Markup snapshots > 'nested tags' 1`] = `
+"before<c=@test1>content1<c=@test2>content2</c>content3</c>after
+==================
+root[3] (1:1-1:64, 0-63)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[3] (1:7-1:59, 6-58)
+│   │ format: "@test1"
+│   ├─0 text "content1" (1:17-1:25, 16-24)
+│   ├─1 color[1] (1:25-1:47, 24-46)
+│   │   │ format: "@test2"
+│   │   └─0 text "content2" (1:35-1:43, 34-42)
+│   └─2 text "content3" (1:47-1:55, 46-54)
+└─2 text "after" (1:59-1:64, 58-63)"
+`;
+
+exports[`parseGw2Markup snapshots > 'newline break' 1`] = `
+"before
+after
+==================
+root[3] (1:1-2:6, 0-12)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 break (1:7-2:1, 6-7)
+└─2 text "after" (2:1-2:6, 7-12)"
+`;
+
+exports[`parseGw2Markup snapshots > 'no markup' 1`] = `
+"this is a test without markup
+==================
+root[1] (1:1-1:30, 0-29)
+└─0 text "this is a test without markup" (1:1-1:30, 0-29)"
+`;
+
+exports[`parseGw2Markup snapshots > 'self-closing br tag' 1`] = `
+"before<br/>after
+==================
+root[3] (1:1-1:17, 0-16)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 break (1:7-1:12, 6-11)
+└─2 text "after" (1:12-1:17, 11-16)"
+`;
+
+exports[`parseGw2Markup snapshots > 'shortest closing match' 1`] = `
+"before<c=@test>content</c>test</c>after
+==================
+root[3] (1:1-1:40, 0-39)
+├─0 text "before" (1:1-1:7, 0-6)
+├─1 color[1] (1:7-1:27, 6-26)
+│   │ format: "@test"
+│   └─0 text "content" (1:16-1:23, 15-22)
+└─2 text "testafter" (1:27-1:40, 26-39)"
+`;
+
+exports[`parseGw2Markup snapshots > 'unknown tag' 1`] = `
+"before<unknown>content</unknown>after
+==================
+root[1] (1:1-1:38, 0-37)
+└─0 text "before<unknown>content</unknown>after" (1:1-1:38, 0-37)"
+`;
+
+exports[`parseGw2Markup snapshots > 'unused open tag' 1`] = `
+"this <c> has specialchars
+==================
+root[1] (1:1-1:26, 0-25)
+└─0 text "this  has specialchars" (1:1-1:26, 0-25)"
+`;

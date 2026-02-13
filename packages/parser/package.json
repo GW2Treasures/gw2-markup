@@ -11,7 +11,9 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsdown src/parser.ts --minify"
+    "build": "tsdown src/parser.ts --minify",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "darthmaim",
@@ -29,6 +31,8 @@
   },
   "devDependencies": {
     "tsdown": "^0.20.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "unist-util-inspect": "^8.1.0",
+    "vitest": "^4.0.18"
   }
 }

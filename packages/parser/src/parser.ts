@@ -57,11 +57,25 @@ export function parseGw2Markup(input: unknown): Root {
 
     const open = rest.match(RE_COLOR_OPEN);
     if (open) {
+      const format = normalizeColorFormat(open[1]?.trim() ?? '');
+
+      // malformed close tags sometimes show up as <c> or <c/>
+      // treat them as closing tags or ignore them
+      if (format === '' || format === '/') {
+        advance(cursor, open[0]);
+        const node = stack.pop();
+        if (node) {
+          node.position!.end = clone(cursor);
+        }
+        i += open[0].length;
+        continue;
+      }
+
       const start = clone(cursor);
       advance(cursor, open[0]);
       const node: Color = {
         type: 'color',
-        format: open[1]?.trim() ?? '',
+        format,
         children: [],
         position: { start, end: clone(cursor) }
       };
@@ -83,22 +97,34 @@ export function parseGw2Markup(input: unknown): Root {
     }
 
     // find start of next potential node
-    let next = rest.search(/<|\n/);
+    // the next node can only start at index 1 since index 0 is already checked for tags and line breaks
+    let next = rest.slice(1).search(/<|\n/);
 
-    // consume rest of text if no more nodes
+    // consume rest of text if there no more potential nodes (-1)
     if (next === -1) {
       next = rest.length;
+    } else {
+      // account for the slice offset
+      next += 1;
     }
 
     // add text node for consumed text
-    if (next > 0) {
-      const start = clone(cursor);
-      const text = rest.slice(0, next);
-      advance(cursor, text);
-      currentChildren().push({
+    const start = clone(cursor);
+    const text = rest.slice(0, next);
+    advance(cursor, text);
+    const children = currentChildren();
+    const end = clone(cursor);
+    const last = children[children.length - 1];
+
+    // if the last node is a text node append the current text
+    if (last?.type === 'text') {
+      last.value += text;
+      last.position!.end = end;
+    } else {
+      children.push({
         type: 'text',
         value: text,
-        position: { start, end: clone(cursor) }
+        position: { start, end }
       });
     }
 
@@ -111,3 +137,21 @@ export function parseGw2Markup(input: unknown): Root {
   return root;
 }
 
+function normalizeColorFormat(raw: string): string {
+  // canonical hex colors are written as "=#rrggbb" in markup
+  if (raw.startsWith('=#')) {
+    return `#${raw.slice(2)}`;
+  }
+
+  // canonical named formats are written as "=@name" in markup
+  if (raw.startsWith('=@')) {
+    return `@${raw.slice(2)}`;
+  }
+
+  // malformed "@=" prefixes should behave like "@"
+  if (raw.startsWith('@=')) {
+    return `@${raw.slice(2)}`;
+  }
+
+  return raw;
+}
