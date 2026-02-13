@@ -24,6 +24,8 @@ These packages operate on the AST and are the foundation for the high level pack
 
 - **[`@gw2/markup-ast`](./packages/ast/)**  
   Type definitions for the AST (Abstract Syntax Tree).
+- **[`@gw2/markup-css`](./packages/css/)**  
+  Default CSS styles for known named color formats.
 - **[`@gw2/markup-parser`](./packages/parser/)**  
   A parser that converts markup into an AST.
 - **[`@gw2/markup-stringify`](./packages/stringify/)**  

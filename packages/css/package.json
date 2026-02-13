@@ -1,0 +1,25 @@
+{
+  "name": "@gw2/markup-css",
+  "version": "1.0.0",
+  "description": "Default CSS styles for Guild Wars 2 markup rendering",
+  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "styles", "colors", "css"],
+  "type": "module",
+  "exports": {
+    "./styles.css": "./styles.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./styles.css"
+  ],
+  "scripts": {},
+  "author": "darthmaim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/css"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  }
+}

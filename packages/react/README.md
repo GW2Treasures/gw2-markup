@@ -47,6 +47,14 @@ const node = renderGw2Markup('Hello <c=@info>world</c>', {
 });
 ```
 
+### CSS styles
+
+If you are using the default color rendering, you can install [`@gw2/markup-css`](../css/) and import a shared stylesheet to apply the default styles for known named color formats.
+
+```ts
+import '@gw2/markup-css/styles.css';
+```
+
 
 ## License
 

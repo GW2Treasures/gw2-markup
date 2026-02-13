@@ -14,6 +14,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
 
+  packages/css: {}
+
   packages/parser:
     dependencies:
       '@gw2/markup-ast':
