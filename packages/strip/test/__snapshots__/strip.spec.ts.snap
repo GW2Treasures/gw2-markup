@@ -1,0 +1,141 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`stripGw2Markup snapshots > 'br tag' 1`] = `
+"before<br>after
+==================
+before
+after"
+`;
+
+exports[`stripGw2Markup snapshots > 'closing tag with format description' 1`] = `
+"<c=@reminder>Contains ... Gang.</c=@reminder><br><br>Use ...
+==================
+Contains ... Gang.
+
+Use ..."
+`;
+
+exports[`stripGw2Markup snapshots > 'color markup' 1`] = `
+"before<c=#bada55>content</c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'malformed close tag c' 1`] = `
+"before<c=@test>content<c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'malformed close tag c/' 1`] = `
+"before<c=@test>content<c/>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'malformed open tag (missing =)' 1`] = `
+"before<c@test>content</c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'malformed open tag (missing @)' 1`] = `
+"before<c=test>content</c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'malformed open tag (switched @=)' 1`] = `
+"before<c@=test>content</c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'missing close color tag' 1`] = `
+"before<c=#bada55>content
+==================
+beforecontent"
+`;
+
+exports[`stripGw2Markup snapshots > 'missing close format tag' 1`] = `
+"before<c=@test>content
+==================
+beforecontent"
+`;
+
+exports[`stripGw2Markup snapshots > 'missing close tag in second segment' 1`] = `
+"before<c=@test1>content1</c>test<c=@test2>content2
+==================
+beforecontent1testcontent2"
+`;
+
+exports[`stripGw2Markup snapshots > 'mix of format and color markup' 1`] = `
+"before<c=@test>content1</c>middle<c=#bada55>content2</c>after
+==================
+beforecontent1middlecontent2after"
+`;
+
+exports[`stripGw2Markup snapshots > 'multiline markup' 1`] = `
+"before<c=@test>content
+</c>after
+==================
+beforecontent
+after"
+`;
+
+exports[`stripGw2Markup snapshots > 'multiple occurrences' 1`] = `
+"before<c=@test>content1</c>middle<c=@test>content2</c>after
+==================
+beforecontent1middlecontent2after"
+`;
+
+exports[`stripGw2Markup snapshots > 'named color' 1`] = `
+"before<c=@test>content</c>after
+==================
+beforecontentafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'nested tags' 1`] = `
+"before<c=@test1>content1<c=@test2>content2</c>content3</c>after
+==================
+beforecontent1content2content3after"
+`;
+
+exports[`stripGw2Markup snapshots > 'newline break' 1`] = `
+"before
+after
+==================
+before
+after"
+`;
+
+exports[`stripGw2Markup snapshots > 'no markup' 1`] = `
+"this is a test without markup
+==================
+this is a test without markup"
+`;
+
+exports[`stripGw2Markup snapshots > 'self-closing br tag' 1`] = `
+"before<br/>after
+==================
+before
+after"
+`;
+
+exports[`stripGw2Markup snapshots > 'shortest closing match' 1`] = `
+"before<c=@test>content</c>test</c>after
+==================
+beforecontenttestafter"
+`;
+
+exports[`stripGw2Markup snapshots > 'unknown tag' 1`] = `
+"before<unknown>content</unknown>after
+==================
+before<unknown>content</unknown>after"
+`;
+
+exports[`stripGw2Markup snapshots > 'unused open tag' 1`] = `
+"this <c> has specialchars
+==================
+this  has specialchars"
+`;

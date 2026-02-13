@@ -49,6 +49,25 @@ importers:
         specifier: ^4.0.18
         version: 4.0.18
 
+  packages/strip:
+    dependencies:
+      '@gw2/markup-parser':
+        specifier: workspace:*
+        version: link:../parser
+      '@gw2/markup-to-text':
+        specifier: workspace:*
+        version: link:../to-text
+    devDependencies:
+      tsdown:
+        specifier: ^0.20.3
+        version: 0.20.3(typescript@5.9.3)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^4.0.18
+        version: 4.0.18
+
   packages/to-hast:
     dependencies:
       '@gw2/markup-ast':
