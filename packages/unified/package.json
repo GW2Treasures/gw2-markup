@@ -19,10 +19,14 @@
       "types": "./dist/stringify.d.mts",
       "default": "./dist/stringify.mjs"
     },
+    "./strip": {
+      "types": "./dist/strip.d.mts",
+      "default": "./dist/strip.mjs"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsdown src/parse.ts src/processor.ts src/rehype.ts src/stringify.ts --minify --dts"
+    "build": "tsdown src/parse.ts src/processor.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
   },
   "keywords": [],
   "author": "darthmaim",
@@ -39,6 +43,7 @@
     "@gw2/markup-ast": "workspace:*",
     "@gw2/markup-parser": "workspace:*",
     "@gw2/markup-to-hast": "workspace:*",
+    "@gw2/markup-to-text": "workspace:*",
     "@gw2/markup-stringify": "workspace:*",
     "unified": "^11.0.5"
   },

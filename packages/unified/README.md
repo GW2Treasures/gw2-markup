@@ -13,7 +13,7 @@ Use the `@gw2/markup-unified/parse` plugin to parse Guild Wars 2® markup into a
 import { unified } from 'unified';
 import { gw2MarkupParse } from '@gw2/markup-unified/parse';
 
-const processor = unified()
+const ast = unified()
   .use(gw2MarkupParse)
   .processSync('Hello <c=@example>world</c>!');
 ```
@@ -50,7 +50,25 @@ const markup = unified()
   .use(gw2MarkupParse)
   .use(gw2MarkupStringify)
   .processSync('Hello <c=@example>world</c>!');
+// => 'Hello <c=@example>world</c>!'
 ```
+
+### Stripping
+
+Use the `@gw2/markup-unified/strip` plugin to convert a Guild Wars 2® markup AST into plain text within a unified processing pipeline.
+
+```ts
+import { unified } from 'unified';
+import { gw2MarkupParse } from '@gw2/markup-unified/parse';
+import { gw2MarkupStrip } from '@gw2/markup-unified/strip';
+
+const text = unified()
+  .use(gw2MarkupParse)
+  .use(gw2MarkupStrip)
+  .processSync('Hello <c=@example>world</c>!');
+// => 'Hello world!'
+```
+
 
 ## License
 

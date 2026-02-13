@@ -114,6 +114,9 @@ importers:
       '@gw2/markup-to-hast':
         specifier: workspace:*
         version: link:../to-hast
+      '@gw2/markup-to-text':
+        specifier: workspace:*
+        version: link:../to-text
       '@types/unist':
         specifier: ^2.0.0
         version: 2.0.11
