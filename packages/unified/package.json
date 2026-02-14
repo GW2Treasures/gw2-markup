@@ -30,6 +30,10 @@
   },
   "author": "darthmaim",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
