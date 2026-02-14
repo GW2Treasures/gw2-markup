@@ -8,6 +8,9 @@
     "./styles.css": "./styles.css",
     "./package.json": "./package.json"
   },
+  "files": [
+    "styles.css"
+  ],
   "sideEffects": [
     "./styles.css"
   ],

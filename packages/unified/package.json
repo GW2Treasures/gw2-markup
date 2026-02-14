@@ -22,6 +22,9 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdown src/parse.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
   },

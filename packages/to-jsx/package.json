@@ -11,6 +11,9 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdown src/to-jsx.ts --minify",
     "test": "vitest run",

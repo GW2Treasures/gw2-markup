@@ -11,6 +11,9 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdown src/parser.ts --minify",
     "test": "vitest run",
