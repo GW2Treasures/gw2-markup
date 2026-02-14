@@ -44,7 +44,7 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "tsdown": "^0.20.3",
-    "typescript": "^5.9.3"
+    "tsdown": "0.20.3",
+    "typescript": "5.9.3"
   }
 }

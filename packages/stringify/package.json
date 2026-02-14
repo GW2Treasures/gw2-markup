@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@gw2/markup-parser": "workspace:*",
-    "tsdown": "^0.20.3",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
+    "tsdown": "0.20.3",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
   }
 }
