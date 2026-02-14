@@ -18,9 +18,9 @@ function stringifyNode(node: InlineNode): string {
 }
 
 function stringifyColor(node: Color): string {
-  if (!node.format) {
+  if (!node.color) {
     return stringifyChildren(node);
   }
 
-  return `<c=${node.format}>${stringifyChildren(node)}</c>`;
+  return `<c=${node.color}>${stringifyChildren(node)}</c>`;
 }

@@ -19,19 +19,19 @@ const hast = gw2MarkupToHast(ast);
 
 You can pass optional options as the second argument to `gw2MarkupToHast` to customize the conversion process. 
 
-- `colorProperties?: (format: string) => Properties`  
-A function that takes a color format (e.g. `@red`, `#ff0000`, etc.) and returns an object with properties to add to the corresponding HAST node.  
-The default implementation sets `style="color: ${format}"` for hex colors and `data-gw2-markup-color="${format}"` for named formats.
+- `colorProperties?: (color: string) => Properties`  
+A function that takes a color value (e.g. `@red`, `#ff0000`, etc.) and returns an object with properties to add to the corresponding HAST node.  
+The default implementation sets `style="color: ${color}"` for hex colors and `data-gw2-markup-color="${color}"` for named colors.
 
 ```ts
 import { gw2MarkupToHast } from '@gw2/markup-to-hast';
 
 const hast = gw2MarkupToHast(ast, {
-  colorProperties: (format) => {
-    if (format.startsWith('#')) {
-      return { style: `color: ${format}` };
+  colorProperties: (color) => {
+    if (color.startsWith('#')) {
+      return { style: `color: ${color}` };
     } else {
-      return { class: `gw2-color--${format}` };
+      return { class: `gw2-color--${color}` };
     }
   },
 });

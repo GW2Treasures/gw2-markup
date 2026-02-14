@@ -4,7 +4,7 @@ import type { Root as Gw2Root, InlineNode, Color } from '@gw2/markup-ast';
 export { HastRoot };
 
 export interface Gw2MarkupToHastOptions {
-  colorProperties?: (format: string) => Properties
+  colorProperties?: (color: string) => Properties
 }
 
 export function gw2MarkupToHast(tree: Gw2Root, options: Gw2MarkupToHastOptions): HastRoot {
@@ -42,16 +42,16 @@ function compileColor(node: Color, options: Gw2MarkupToHastOptions): ElementCont
   return {
     type: 'element',
     tagName: 'span',
-    properties: (options.colorProperties ?? defaultColorProperties)(node.format),
+    properties: (options.colorProperties ?? defaultColorProperties)(node.color),
     children,
     position: node.position,
   };
 }
 
-function defaultColorProperties(format: string): Properties {
-  if (format.startsWith('#')) {
-    return { style: `color:${format}` };
+function defaultColorProperties(color: string): Properties {
+  if (color.startsWith('#')) {
+    return { style: `color:${color}` };
   }
 
-  return { 'data-gw2-markup-color': format };
+  return { 'data-gw2-markup-color': color };
 }

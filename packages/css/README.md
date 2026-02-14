@@ -1,11 +1,11 @@
 # @gw2/markup-css
 
-CSS styles for known Guild Wars 2® named color formats.
+CSS styles for known Guild Wars 2® named colors.
 
 
 ## Usage
 
-Import the CSS file in your project to apply the default styles for named color formats.
+Import the CSS file in your project to apply the default styles for named colors.
 
 ### CSS
 

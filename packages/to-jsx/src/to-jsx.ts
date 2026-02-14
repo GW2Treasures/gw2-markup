@@ -58,7 +58,7 @@ function compileColor<TElement, TComponent>(
 
   return options.createElement(
     components.color,
-    { format: node.format },
+    { color: node.color },
     ...children,
   );
 }

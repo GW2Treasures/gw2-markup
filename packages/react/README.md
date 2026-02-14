@@ -32,7 +32,7 @@ You can customize the components used for rendering the different markup nodes b
 | Component slot | Description | Default |
 |-|-|-|
 | `root` | The root component that wraps the entire rendered output. | `React.Fragment` |
-| `color` | The component used to render color nodes. Receives a `format` prop with the color format (e.g. `@info`, `#ff0000`). | `span` with inline style for hex colors and a `data-gw2-markup-color` attribute for named formats |
+| `color` | The component used to render color nodes. Receives a `color` prop with the color value (e.g. `@info`, `#ff0000`). | `span` with inline style for hex colors and a `data-gw2-markup-color` attribute for named colors |
 | `break` | The component used to render line breaks. | `br` |
 
 ```tsx
@@ -40,8 +40,8 @@ import { renderGw2Markup } from '@gw2/markup-react';
 
 const node = renderGw2Markup('Hello <c=@info>world</c>', {
   components: {
-    color: ({ format, children }) => (
-      <span className={`gw2-color-${format.slice(1)}`}>{children}</span>
+    color: ({ color, children }) => (
+      <span className={`gw2-color-${color.slice(1)}`}>{children}</span>
     ),
   },
 });
@@ -49,7 +49,7 @@ const node = renderGw2Markup('Hello <c=@info>world</c>', {
 
 ### CSS styles
 
-If you are using the default color rendering, you can install [`@gw2/markup-css`](../css/) and import a shared stylesheet to apply the default styles for known named color formats.
+If you are using the default color rendering, you can install [`@gw2/markup-css`](../css/) and import a shared stylesheet to apply the default styles for known named colors.
 
 ```ts
 import '@gw2/markup-css/styles.css';

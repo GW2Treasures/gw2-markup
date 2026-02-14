@@ -37,7 +37,7 @@ describe('gw2MarkupToJsx', () => {
         'before',
         {
           type: 'Color',
-          props: { format: '@test' },
+          props: { color: '@test' },
           children: ['content'],
         },
         {
@@ -50,7 +50,7 @@ describe('gw2MarkupToJsx', () => {
     });
   });
 
-  it('passes a format prop to the color component', () => {
+  it('passes a color prop to the color component', () => {
     const tree = parseGw2Markup('before<c=#bada55>color</c><br>after');
     const output = gw2MarkupToJsx(tree, {
       createElement,
@@ -68,7 +68,7 @@ describe('gw2MarkupToJsx', () => {
         'before',
         {
           type: 'Color',
-          props: { format: '#bada55' },
+          props: { color: '#bada55' },
           children: ['color'],
         },
         {

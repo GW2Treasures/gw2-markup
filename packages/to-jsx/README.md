@@ -34,7 +34,7 @@ const element = gw2MarkupToJsx(ast, {
   - `root`
   - `color`
   - `break`
-- Color nodes always receive `{ format: string }` as props.
+- Color nodes always receive `{ color: string }` as props.
 
 
 ## License

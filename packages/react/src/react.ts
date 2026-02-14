@@ -14,16 +14,16 @@ export interface Gw2MarkupProps extends RenderGw2MarkupOptions {
 }
 
 interface Gw2ColorProps {
-  format: string;
+  color: string;
   children?: React.ReactNode;
 }
 
-function DefaultColor({ format, children }: Gw2ColorProps): React.ReactNode {
-  if (format.startsWith('#')) {
-    return React.createElement('span', { style: { color: format } }, children);
+function DefaultColor({ color, children }: Gw2ColorProps): React.ReactNode {
+  if (color.startsWith('#')) {
+    return React.createElement('span', { style: { color } }, children);
   }
 
-  return React.createElement('span', { 'data-gw2-markup-color': format }, children);
+  return React.createElement('span', { 'data-gw2-markup-color': color }, children);
 }
 
 const defaultComponents: Gw2MarkupToJsxComponents<React.ElementType> = {

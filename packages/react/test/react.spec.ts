@@ -35,15 +35,15 @@ describe('renderGw2MarkupReact', () => {
         null,
         renderGw2Markup('before<c=@test>content</c><br>after', {
           components: {
-            color: ({ format, children }: { format: string; children?: React.ReactNode }) =>
-              React.createElement('mark', { 'data-color-format': format }, children),
+            color: ({ color, children }: { color: string; children?: React.ReactNode }) =>
+              React.createElement('mark', { 'data-color': color }, children),
             break: () => React.createElement('hr', { role: 'separator' }),
           },
         }),
       ),
     );
 
-    expect(output).toMatchInlineSnapshot(`"before<mark data-color-format="@test">content</mark><hr role="separator"/>after"`);
+    expect(output).toMatchInlineSnapshot(`"before<mark data-color="@test">content</mark><hr role="separator"/>after"`);
   });
 });
 
@@ -61,13 +61,13 @@ describe('Gw2Markup component', () => {
       React.createElement(Gw2Markup, {
         markup: 'before<c=@test>content</c><br>after',
         components: {
-          color: ({ format, children }: { format: string; children?: React.ReactNode }) =>
-            React.createElement('mark', { 'data-color-format': format }, children),
+          color: ({ color, children }: { color: string; children?: React.ReactNode }) =>
+            React.createElement('mark', { 'data-color': color }, children),
           break: () => React.createElement('hr', { role: 'separator' }),
         },
       }),
     );
 
-    expect(output).toMatchInlineSnapshot(`"before<mark data-color-format="@test">content</mark><hr role="separator"/>after"`);
+    expect(output).toMatchInlineSnapshot(`"before<mark data-color="@test">content</mark><hr role="separator"/>after"`);
   });
 });

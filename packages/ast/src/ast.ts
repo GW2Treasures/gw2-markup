@@ -22,9 +22,20 @@ export interface Break {
   position?: Position;
 }
 
+export type KnownNamedColor =
+  | '@abilitytype'
+  | '@flavor'
+  | '@reminder'
+  | '@quest'
+  | '@task'
+  | '@warning'
+  | '@event';
+
+export type HexColor = `#${string}`;
+
 export interface Color extends Parent {
   type: 'color';
-  format: string;
+  color: KnownNamedColor | HexColor | (string & {});
   children: InlineNode[];
   position?: Position;
 }

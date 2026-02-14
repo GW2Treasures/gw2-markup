@@ -57,11 +57,11 @@ export function parseGw2Markup(input: unknown): Root {
 
     const open = rest.match(RE_COLOR_OPEN);
     if (open) {
-      const format = normalizeColorFormat(open[1]?.trim() ?? '');
+      const color = normalizeColor(open[1]?.trim() ?? '');
 
       // malformed close tags sometimes show up as <c> or <c/>
       // treat them as closing tags or ignore them
-      if (format === '' || format === '/') {
+      if (color === '' || color === '/') {
         advance(cursor, open[0]);
         const node = stack.pop();
         if (node) {
@@ -75,7 +75,7 @@ export function parseGw2Markup(input: unknown): Root {
       advance(cursor, open[0]);
       const node: Color = {
         type: 'color',
-        format,
+        color,
         children: [],
         position: { start, end: clone(cursor) }
       };
@@ -137,13 +137,13 @@ export function parseGw2Markup(input: unknown): Root {
   return root;
 }
 
-function normalizeColorFormat(raw: string): string {
+function normalizeColor(raw: string): string {
   // canonical hex colors are written as "=#rrggbb" in markup
   if (raw.startsWith('=#')) {
     return `#${raw.slice(2)}`;
   }
 
-  // canonical named formats are written as "=@name" in markup
+  // canonical named colors are written as "=@name" in markup
   if (raw.startsWith('=@')) {
     return `@${raw.slice(2)}`;
   }
