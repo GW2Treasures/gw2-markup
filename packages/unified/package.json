@@ -1,5 +1,5 @@
 {
-  "name": "unified",
+  "name": "@gw2/markup-unified",
   "version": "1.0.0",
   "description": "Unified processor for Guild Wars 2 Markup",
   "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "unified"],

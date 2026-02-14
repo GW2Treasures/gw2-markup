@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { parseGw2Markup } from '../../parser/src/parser.ts';
-import { stringifyGw2Markup } from '../src/stringify.ts';
+import { parseGw2Markup } from '@gw2/markup-parser';
+import { stringifyGw2Markup } from '../src/stringify.js';
 import testCases from '../../../tests.json';
 
 const stringify = (input: unknown) => {

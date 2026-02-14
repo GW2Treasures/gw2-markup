@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { inspect } from 'unist-util-inspect';
-import { parseGw2Markup } from '../src/parser.ts';
+import { parseGw2Markup } from '../src/parser.js';
 import testCases from '../../../tests.json';
 
 const invalidInputs: Array<{ name: string; input: unknown }> = [

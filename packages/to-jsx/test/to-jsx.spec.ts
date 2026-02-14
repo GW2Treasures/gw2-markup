@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { parseGw2Markup } from '../../parser/src/parser.ts';
-import { gw2MarkupToJsx } from '../src/to-jsx.ts';
+import { parseGw2Markup } from '@gw2/markup-parser';
+import { gw2MarkupToJsx } from '../src/to-jsx.js';
 
 interface MockElement {
   type: string;

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { parseGw2Markup } from '../../parser/src/parser.ts';
-import { gw2MarkupToText } from '../src/to-text.ts';
+import { parseGw2Markup } from '@gw2/markup-parser';
+import { gw2MarkupToText } from '../src/to-text.js';
 import testCases from '../../../tests.json';
 
 const toText = (input: unknown) => {

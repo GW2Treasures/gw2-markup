@@ -72,6 +72,9 @@ importers:
         specifier: workspace:*
         version: link:../ast
     devDependencies:
+      '@gw2/markup-parser':
+        specifier: workspace:*
+        version: link:../parser
       tsdown:
         specifier: ^0.20.3
         version: 0.20.3(typescript@5.9.3)
@@ -123,6 +126,9 @@ importers:
         specifier: workspace:*
         version: link:../ast
     devDependencies:
+      '@gw2/markup-parser':
+        specifier: workspace:*
+        version: link:../parser
       tsdown:
         specifier: ^0.20.3
         version: 0.20.3(typescript@5.9.3)
@@ -139,6 +145,9 @@ importers:
         specifier: workspace:*
         version: link:../ast
     devDependencies:
+      '@gw2/markup-parser':
+        specifier: workspace:*
+        version: link:../parser
       tsdown:
         specifier: ^0.20.3
         version: 0.20.3(typescript@5.9.3)
@@ -166,9 +175,6 @@ importers:
       '@gw2/markup-to-text':
         specifier: workspace:*
         version: link:../to-text
-      '@types/unist':
-        specifier: ^2.0.0
-        version: 2.0.11
       unified:
         specifier: ^11.0.5
         version: 11.0.5
@@ -623,9 +629,6 @@ packages:
 
   '@types/react@19.2.14':
     resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
-
-  '@types/unist@2.0.11':
-    resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1306,8 +1309,6 @@ snapshots:
   '@types/react@19.2.14':
     dependencies:
       csstype: 3.2.3
-
-  '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { stripGw2Markup } from '../src/strip.ts';
+import { stripGw2Markup } from '../src/strip.js';
 import testCases from '../../../tests.json';
 
 const strip = (input: unknown) => {

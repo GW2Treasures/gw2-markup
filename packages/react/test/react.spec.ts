@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Gw2Markup, renderGw2Markup } from '../src/react.ts';
+import { Gw2Markup, renderGw2Markup } from '../src/react.js';
 
 describe('renderGw2MarkupReact', () => {
   it('renders default color and break components', () => {
