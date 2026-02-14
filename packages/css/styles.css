@@ -1,7 +1,7 @@
-[data-gw2-markup-color="abilitytype"] { color: var(--gw2-markup-abilitytype, #FFEC8C); }
-[data-gw2-markup-color="flavor"] { color: var(--gw2-markup-flavor, #9BE8E4); }
-[data-gw2-markup-color="reminder"] { color: var(--gw2-markup-reminder, #B0B0B0); }
-[data-gw2-markup-color="quest"] { color: var(--gw2-markup-quest, #00FF00); }
-[data-gw2-markup-color="task"] { color: var(--gw2-markup-task, #FFC957); }
-[data-gw2-markup-color="warning"] { color: var(--gw2-markup-warning, #ED0002); }
-[data-gw2-markup-color="event"] { color: var(--gw2-markup-event, #CC6633); }
+[data-gw2-markup-color="@abilitytype"] { color: var(--gw2-markup-abilitytype, #FFEC8C); }
+[data-gw2-markup-color="@flavor"] { color: var(--gw2-markup-flavor, #9BE8E4); }
+[data-gw2-markup-color="@reminder"] { color: var(--gw2-markup-reminder, #B0B0B0); }
+[data-gw2-markup-color="@quest"] { color: var(--gw2-markup-quest, #00FF00); }
+[data-gw2-markup-color="@task"] { color: var(--gw2-markup-task, #FFC957); }
+[data-gw2-markup-color="@warning"] { color: var(--gw2-markup-warning, #ED0002); }
+[data-gw2-markup-color="@event"] { color: var(--gw2-markup-event, #CC6633); }
