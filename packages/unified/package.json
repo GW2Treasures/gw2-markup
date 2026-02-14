@@ -8,10 +8,6 @@
       "types": "./dist/parse.d.mts",
       "default": "./dist/parse.mjs"
     },
-    "./processor": {
-      "types": "./dist/processor.d.mts",
-      "default": "./dist/processor.mjs"
-    },
     "./rehype": {
       "types": "./dist/rehype.d.mts",
       "default": "./dist/rehype.mjs"
@@ -27,7 +23,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsdown src/parse.ts src/processor.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
+    "build": "tsdown src/parse.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
   },
   "author": "darthmaim",
   "license": "MIT",
