@@ -42,6 +42,7 @@
 - Build all packages: `pnpm build`
 - Run all tests: `pnpm test`
 - Update snapshots: `pnpm test -- -u`
+- For user-facing changes, add a changeset for all affected packages.
 - Per-package workflow uses pnpm filtering, e.g. `pnpm -F @gw2/markup-react test`.
 - Snapshot tests are shared-data driven: `tests.json` powers underlying test suites.
 
