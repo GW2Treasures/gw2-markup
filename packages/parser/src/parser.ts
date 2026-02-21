@@ -1,21 +1,39 @@
 import type { Root, Color } from '@gw2/markup-ast';
-import { createCursor, advance, clone } from './cursor.js';
+import { createCursor } from './cursor.js';
 
 const RE_COLOR_OPEN = /^<c([^>]*)>/i;
 const RE_COLOR_CLOSE = /^<\/c([^>]*)>/i;
 const RE_BR = /^<br\s*\/?>/i;
 
-export function parseGw2Markup(input: unknown): Root {
+export interface ParserOptions {
+  /**
+   * Controls whether position information is included in the output AST.
+   * If position information is not needed, this can be disabled to improve performance.
+   *
+   * @default true
+   */
+  includePosition?: boolean;
+}
+
+/**
+ * Parses a string with Guild Wars 2 markup into an abstract syntax tree (AST).
+ *
+ * @param input The input string to parse. Non-string inputs will be treated as empty strings.
+ * @param options Parser options.
+ * @returns The root node of the parsed abstract syntax tree (AST).
+ */
+export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Root {
   const value = typeof input === 'string' ? input : '';
 
-  // keep track of current position to add positional info to nodes
-  const cursor = createCursor();
+  const cursor = options.includePosition ?? true
+    ? createCursor()
+    : undefined;
 
   // create root node
   const root: Root = {
     type: 'root',
     children: [],
-    position: { start: clone(cursor), end: clone(cursor) }
+    position: cursor ? { start: cursor.point(), end: cursor.point() } : undefined
   };
 
   // stack to keep track of open nodes
@@ -33,11 +51,9 @@ export function parseGw2Markup(input: unknown): Root {
 
     // line break
     if (rest[0] === '\n') {
-      const start = clone(cursor);
-      advance(cursor, '\n');
       currentChildren().push({
         type: 'break',
-        position: { start, end: clone(cursor) }
+        position: cursor?.advance('\n')
       });
       i += 1;
       continue;
@@ -45,11 +61,9 @@ export function parseGw2Markup(input: unknown): Root {
 
     const br = rest.match(RE_BR);
     if (br) {
-      const start = clone(cursor);
-      advance(cursor, br[0]);
       currentChildren().push({
         type: 'break',
-        position: { start, end: clone(cursor) }
+        position: cursor?.advance(br[0])
       });
       i += br[0].length;
       continue;
@@ -62,22 +76,20 @@ export function parseGw2Markup(input: unknown): Root {
       // malformed close tags sometimes show up as <c> or <c/>
       // treat them as closing tags or ignore them
       if (color === '' || color === '/') {
-        advance(cursor, open[0]);
+        const position = cursor?.advance(open[0]);
         const node = stack.pop();
-        if (node) {
-          node.position!.end = clone(cursor);
+        if (node && position) {
+          node.position!.end = position.end;
         }
         i += open[0].length;
         continue;
       }
 
-      const start = clone(cursor);
-      advance(cursor, open[0]);
       const node: Color = {
         type: 'color',
         color,
         children: [],
-        position: { start, end: clone(cursor) }
+        position: cursor?.advance(open[0])
       };
       currentChildren().push(node);
       stack.push(node);
@@ -87,10 +99,10 @@ export function parseGw2Markup(input: unknown): Root {
 
     const close = rest.match(RE_COLOR_CLOSE);
     if (close) {
-      advance(cursor, close[0]);
+      const position = cursor?.advance(close[0]);
       const node = stack.pop();
-      if (node) {
-        node.position!.end = clone(cursor);
+      if (node && position) {
+        node.position!.end = position.end;
       }
       i += close[0].length;
       continue;
@@ -109,22 +121,23 @@ export function parseGw2Markup(input: unknown): Root {
     }
 
     // add text node for consumed text
-    const start = clone(cursor);
     const text = rest.slice(0, next);
-    advance(cursor, text);
     const children = currentChildren();
-    const end = clone(cursor);
     const last = children[children.length - 1];
+
+    const position = cursor?.advance(text);
 
     // if the last node is a text node append the current text
     if (last?.type === 'text') {
       last.value += text;
-      last.position!.end = end;
+      if (position) {
+        last.position!.end = position.end;
+      }
     } else {
       children.push({
         type: 'text',
         value: text,
-        position: { start, end }
+        position
       });
     }
 
@@ -132,8 +145,13 @@ export function parseGw2Markup(input: unknown): Root {
   }
 
   // close any remaining open nodes
-  for (const node of stack) node.position!.end = clone(cursor);
-  root.position!.end = clone(cursor);
+  if (cursor) {
+    for (const node of stack) {
+      node.position!.end = cursor.point();
+    }
+    root.position!.end = cursor.point();
+  }
+
   return root;
 }
 

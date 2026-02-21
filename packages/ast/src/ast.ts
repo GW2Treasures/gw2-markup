@@ -1,4 +1,6 @@
-import type { Parent, Literal, Position } from 'unist';
+import type { Parent, Literal, Position, Point } from 'unist';
+
+export type { Position, Point };
 
 export interface Root extends Parent {
   type: 'root';

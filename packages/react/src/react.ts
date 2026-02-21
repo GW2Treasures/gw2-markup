@@ -36,7 +36,7 @@ export function renderGw2Markup(
   input: string,
   options: RenderGw2MarkupOptions = {},
 ): React.ReactNode {
-  const tree = parseGw2Markup(input);
+  const tree = parseGw2Markup(input, { includePosition: false });
 
   return gw2MarkupToJsx<React.ReactNode, React.ElementType>(tree, {
     createElement: React.createElement,

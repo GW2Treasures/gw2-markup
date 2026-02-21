@@ -11,8 +11,8 @@ const invalidInputs: Array<{ name: string; input: unknown }> = [
   { name: 'number', input: 1 }
 ];
 
-const parse = (input: unknown) => {
-  const tree = parseGw2Markup(input);
+const parse = (input: unknown, options?: { includePosition?: boolean }) => {
+  const tree = parseGw2Markup(input, options);
   const output = inspect(tree, { color: false });
   return `${input}\n==================\n${output}`;
 };
@@ -20,6 +20,12 @@ const parse = (input: unknown) => {
 describe('parseGw2Markup snapshots', () => {
   it.each(testCases)('$name', ({ input }) => {
     expect(parse(input)).toMatchSnapshot();
+  });
+});
+
+describe('parseGw2Markup snapshots without position', () => {
+  it.each(testCases)('$name', ({ input }) => {
+    expect(parse(input, { includePosition: false })).toMatchSnapshot();
   });
 });
 
