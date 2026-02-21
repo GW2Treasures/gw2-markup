@@ -1,8 +1,16 @@
 {
   "name": "@gw2/markup-to-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert Guild Wars 2 Markup AST to plain text",
-  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "text", "plain"],
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "ast",
+    "text",
+    "plain"
+  ],
   "type": "module",
   "exports": {
     ".": {

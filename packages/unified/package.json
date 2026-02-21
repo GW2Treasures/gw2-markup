@@ -1,8 +1,15 @@
 {
   "name": "@gw2/markup-unified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unified processor for Guild Wars 2 Markup",
-  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "unified"],
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "ast",
+    "unified"
+  ],
   "type": "module",
   "exports": {
     "./parse": {
