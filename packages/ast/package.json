@@ -13,13 +13,17 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./src/ast.ts"
+      "types": "./dist/ast.d.ts",
+      "default": "./dist/ast.js"
     },
     "./package.json": "./package.json"
   },
   "files": [
-    "src/ast.ts"
+    "dist"
   ],
+  "scripts": {
+    "build": "tsdown src/ast.ts"
+  },
   "author": "darthmaim",
   "license": "MIT",
   "publishConfig": {
@@ -37,5 +41,9 @@
   "homepage": "https://github.com/GW2Treasures/gw2-markup#readme",
   "dependencies": {
     "@types/unist": "^3.0.3"
+  },
+  "devDependencies": {
+    "tsdown": "0.20.3",
+    "typescript": "5.9.3"
   }
 }

@@ -30,6 +30,13 @@ importers:
       '@types/unist':
         specifier: ^3.0.3
         version: 3.0.3
+    devDependencies:
+      tsdown:
+        specifier: 0.20.3
+        version: 0.20.3(@arethetypeswrong/core@0.18.2)(publint@0.3.17)(typescript@5.9.3)
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
 
   packages/css: {}
 
