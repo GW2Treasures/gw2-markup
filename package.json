@@ -12,9 +12,9 @@
     "@changesets/cli": "2.29.8"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "^0.18.2",
+    "@arethetypeswrong/core": "0.18.2",
     "@changeset-bot/changelog": "0.0.4",
-    "publint": "^0.3.17",
+    "publint": "0.3.17",
     "tsdown": "0.20.3"
   },
   "packageManager": "pnpm@10.30.0",
