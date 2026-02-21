@@ -6,9 +6,22 @@ const RE_COLOR_CLOSE = /^<\/c([^>]*)>/i;
 const RE_BR = /^<br\s*\/?>/i;
 
 export interface ParserOptions {
+  /**
+   * Controls whether position information is included in the output AST.
+   * If position information is not needed, this can be disabled to improve performance.
+   *
+   * @default true
+   */
   includePosition?: boolean;
 }
 
+/**
+ * Parses a string with Guild Wars 2 markup into an abstract syntax tree (AST).
+ *
+ * @param input The input string to parse. Non-string inputs will be treated as empty strings.
+ * @param options Parser options.
+ * @returns The root node of the parsed abstract syntax tree (AST).
+ */
 export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Root {
   const value = typeof input === 'string' ? input : '';
 
