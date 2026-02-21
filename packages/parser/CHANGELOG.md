@@ -1,5 +1,12 @@
 # @gw2/markup-parser
 
+## 1.1.1
+
+### Patch Changes
+
+- Improve parser performance ([#21](https://github.com/GW2Treasures/gw2-markup/pull/21) by [@darthmaim](https://github.com/darthmaim))
+- Optimize position tracking performance ([#19](https://github.com/GW2Treasures/gw2-markup/pull/19) by [@darthmaim](https://github.com/darthmaim))
+
 ## 1.1.0
 
 ### Minor Changes
