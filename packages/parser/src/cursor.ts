@@ -20,12 +20,28 @@ export function createCursor(): Cursor {
 }
 
 function advance(start: Point, value: string): void {
-  for (const ch of value) {
-    if (start.offset !== undefined) {
-      start.offset += 1;
-    }
+  // add length to offset
+  if (start.offset !== undefined) {
+    start.offset += value.length;
+  }
 
-    if (ch === '\n') {
+  // fast path for single line break
+  if (value === '\n') {
+    start.line += 1;
+    start.column = 1;
+    return;
+  }
+
+  // fast path for no line breaks (this is the most common case)
+  if (!value.includes('\n')) {
+    start.column += value.length;
+    return;
+  }
+
+  // iterate through every character to update position
+  for (let i = 0; i < value.length; i++) {
+    const char = value.charCodeAt(i);
+    if (char === 10) { // '\n'
       start.line += 1;
       start.column = 1;
     } else {
@@ -35,5 +51,9 @@ function advance(start: Point, value: string): void {
 }
 
 function clone(point: Point): Point {
-  return { ...point };
+  return {
+    line: point.line,
+    column: point.column,
+    offset: point.offset
+  };
 }

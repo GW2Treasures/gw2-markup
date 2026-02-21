@@ -2,6 +2,7 @@
   "name": "@gw2/markup",
   "private": true,
   "scripts": {
+    "bench": "pnpm run -r bench",
     "build": "pnpm run -r build",
     "changeset": "changeset",
     "test": "pnpm run -r test",
