@@ -8,7 +8,7 @@ export function createCursor(): Cursor {
   return { line: 1, column: 1, offset: 0 };
 }
 
-export function advance(cursor: Cursor, value: string) {
+export function advance(cursor: Cursor, value: string): void {
   for (const ch of value) {
     cursor.offset += 1;
     if (ch === '\n') {

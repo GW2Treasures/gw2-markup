@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseGw2Markup } from '@gw2/markup-parser';
 import { gw2MarkupToText } from '../src/to-text.js';
-import testCases from '../../../tests.json';
+import testCases from '../../../tests.json' with { type: 'json' };
 
 const toText = (input: unknown) => {
   const tree = parseGw2Markup(input);

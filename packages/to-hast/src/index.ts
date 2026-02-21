@@ -1,7 +1,7 @@
 import type { ElementContent, Root as HastRoot, Properties } from 'hast';
 import type { Root as Gw2Root, InlineNode, Color } from '@gw2/markup-ast';
 
-export { HastRoot };
+export type { HastRoot };
 
 export interface Gw2MarkupToHastOptions {
   colorProperties?: (color: string) => Properties
@@ -38,7 +38,7 @@ function compileNode(node: InlineNode, options: Gw2MarkupToHastOptions): Element
 
 function compileColor(node: Color, options: Gw2MarkupToHastOptions): ElementContent {
   const children = node.children.map((child) => compileNode(child, options));
-  
+
   return {
     type: 'element',
     tagName: 'span',

@@ -10,7 +10,7 @@ export function parseGw2Markup(input: unknown): Root {
 
   // keep track of current position to add positional info to nodes
   const cursor = createCursor();
-  
+
   // create root node
   const root: Root = {
     type: 'root',

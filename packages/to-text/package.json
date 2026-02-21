@@ -6,8 +6,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/to-text.d.mts",
-      "default": "./dist/to-text.mjs"
+      "types": "./dist/to-text.d.ts",
+      "default": "./dist/to-text.js"
     },
     "./package.json": "./package.json"
   },
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/to-text.ts --minify",
+    "build": "tsdown src/to-text.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },

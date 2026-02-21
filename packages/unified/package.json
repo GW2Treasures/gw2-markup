@@ -3,22 +3,23 @@
   "version": "1.0.0",
   "description": "Unified processor for Guild Wars 2 Markup",
   "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "unified"],
+  "type": "module",
   "exports": {
     "./parse": {
-      "types": "./dist/parse.d.mts",
-      "default": "./dist/parse.mjs"
+      "types": "./dist/parse.d.ts",
+      "default": "./dist/parse.js"
     },
     "./rehype": {
-      "types": "./dist/rehype.d.mts",
-      "default": "./dist/rehype.mjs"
+      "types": "./dist/rehype.d.ts",
+      "default": "./dist/rehype.js"
     },
     "./stringify": {
-      "types": "./dist/stringify.d.mts",
-      "default": "./dist/stringify.mjs"
+      "types": "./dist/stringify.d.ts",
+      "default": "./dist/stringify.js"
     },
     "./strip": {
-      "types": "./dist/strip.d.mts",
-      "default": "./dist/strip.mjs"
+      "types": "./dist/strip.d.ts",
+      "default": "./dist/strip.js"
     },
     "./package.json": "./package.json"
   },
@@ -26,7 +27,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/parse.ts src/rehype.ts src/stringify.ts src/strip.ts --minify --dts"
+    "build": "tsdown src/parse.ts src/rehype.ts src/stringify.ts src/strip.ts"
   },
   "author": "darthmaim",
   "license": "MIT",

@@ -6,8 +6,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/strip.d.mts",
-      "default": "./dist/strip.mjs"
+      "types": "./dist/strip.d.ts",
+      "default": "./dist/strip.js"
     },
     "./package.json": "./package.json"
   },
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/strip.ts --minify",
+    "build": "tsdown src/strip.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },

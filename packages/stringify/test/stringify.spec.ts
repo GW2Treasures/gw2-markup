@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseGw2Markup } from '@gw2/markup-parser';
 import { stringifyGw2Markup } from '../src/stringify.js';
-import testCases from '../../../tests.json';
+import testCases from '../../../tests.json' with { type: 'json' };
 
 const stringify = (input: unknown) => {
   const tree = parseGw2Markup(input);

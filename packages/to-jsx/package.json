@@ -6,8 +6,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/to-jsx.d.mts",
-      "default": "./dist/to-jsx.mjs"
+      "types": "./dist/to-jsx.d.ts",
+      "default": "./dist/to-jsx.js"
     },
     "./package.json": "./package.json"
   },
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/to-jsx.ts --minify",
+    "build": "tsdown src/to-jsx.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },

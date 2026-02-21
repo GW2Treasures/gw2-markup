@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { stripGw2Markup } from '../src/strip.js';
-import testCases from '../../../tests.json';
+import testCases from '../../../tests.json' with { type: 'json' };
 
 const strip = (input: unknown) => {
   const output = stripGw2Markup(input);
