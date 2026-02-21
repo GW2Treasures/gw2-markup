@@ -13,13 +13,13 @@ importers:
         version: 2.29.8
     devDependencies:
       '@arethetypeswrong/core':
-        specifier: ^0.18.2
+        specifier: 0.18.2
         version: 0.18.2
       '@changeset-bot/changelog':
         specifier: 0.0.4
         version: 0.0.4
       publint:
-        specifier: ^0.3.17
+        specifier: 0.3.17
         version: 0.3.17
       tsdown:
         specifier: 0.20.3
