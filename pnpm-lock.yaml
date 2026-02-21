@@ -36,7 +36,7 @@ importers:
   packages/parser:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
     devDependencies:
       tsdown:
@@ -55,10 +55,10 @@ importers:
   packages/react:
     dependencies:
       '@gw2/markup-parser':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../parser
       '@gw2/markup-to-jsx':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../to-jsx
     devDependencies:
       '@types/react':
@@ -86,7 +86,7 @@ importers:
   packages/stringify:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
     devDependencies:
       '@gw2/markup-parser':
@@ -105,10 +105,10 @@ importers:
   packages/strip:
     dependencies:
       '@gw2/markup-parser':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../parser
       '@gw2/markup-to-text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../to-text
     devDependencies:
       tsdown:
@@ -124,7 +124,7 @@ importers:
   packages/to-hast:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
       '@types/hast':
         specifier: ^3.0.0
@@ -140,7 +140,7 @@ importers:
   packages/to-jsx:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
     devDependencies:
       '@gw2/markup-parser':
@@ -159,7 +159,7 @@ importers:
   packages/to-text:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
     devDependencies:
       '@gw2/markup-parser':
@@ -178,19 +178,19 @@ importers:
   packages/unified:
     dependencies:
       '@gw2/markup-ast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../ast
       '@gw2/markup-parser':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../parser
       '@gw2/markup-stringify':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../stringify
       '@gw2/markup-to-hast':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../to-hast
       '@gw2/markup-to-text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../to-text
       unified:
         specifier: ^11.0.5
