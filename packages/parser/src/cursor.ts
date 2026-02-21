@@ -16,7 +16,7 @@ export function createCursor(): Cursor {
       advance(point, value);
       return { start, end: clone(point) };
     }
-  }
+  };
 }
 
 function advance(start: Point, value: string): void {

@@ -131,7 +131,7 @@ export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Roo
     if (last?.type === 'text') {
       last.value += text;
       if (position) {
-        last.position!.end = position?.end;
+        last.position!.end = position.end;
       }
     } else {
       children.push({
