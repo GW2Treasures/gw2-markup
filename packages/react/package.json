@@ -34,8 +34,8 @@
     "url": "https://github.com/gw2treasures/gw2-markup/issues"
   },
   "dependencies": {
-    "@gw2/markup-parser": "workspace:*",
-    "@gw2/markup-to-jsx": "workspace:*"
+    "@gw2/markup-parser": "workspace:^",
+    "@gw2/markup-to-jsx": "workspace:^"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0"

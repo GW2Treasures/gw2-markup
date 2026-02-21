@@ -34,7 +34,7 @@
     "url": "https://github.com/gw2treasures/gw2-markup/issues"
   },
   "dependencies": {
-    "@gw2/markup-ast": "workspace:*"
+    "@gw2/markup-ast": "workspace:^"
   },
   "devDependencies": {
     "@gw2/markup-parser": "workspace:*",

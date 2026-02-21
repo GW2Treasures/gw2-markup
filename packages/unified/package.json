@@ -44,11 +44,11 @@
     "url": "https://github.com/gw2treasures/gw2-markup/issues"
   },
   "dependencies": {
-    "@gw2/markup-ast": "workspace:*",
-    "@gw2/markup-parser": "workspace:*",
-    "@gw2/markup-to-hast": "workspace:*",
-    "@gw2/markup-to-text": "workspace:*",
-    "@gw2/markup-stringify": "workspace:*",
+    "@gw2/markup-ast": "workspace:^",
+    "@gw2/markup-parser": "workspace:^",
+    "@gw2/markup-to-hast": "workspace:^",
+    "@gw2/markup-to-text": "workspace:^",
+    "@gw2/markup-stringify": "workspace:^",
     "unified": "^11.0.5"
   },
   "devDependencies": {
