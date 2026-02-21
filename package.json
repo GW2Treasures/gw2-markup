@@ -17,6 +17,6 @@
     "publint": "^0.3.17",
     "tsdown": "0.20.3"
   },
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.30.0",
   "license": "MIT"
 }
