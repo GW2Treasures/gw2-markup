@@ -6,8 +6,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/parser.d.mts",
-      "default": "./dist/parser.mjs"
+      "types": "./dist/parser.d.ts",
+      "default": "./dist/parser.js"
     },
     "./package.json": "./package.json"
   },
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/parser.ts --minify",
+    "build": "tsdown src/parser.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },

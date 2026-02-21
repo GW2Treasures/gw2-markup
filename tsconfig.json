@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module":"nodenext",
+    "moduleResolution": "nodenext",
+    "declaration": true,
+    "isolatedDeclarations": true,
+    "verbatimModuleSyntax": true
+  }
+}

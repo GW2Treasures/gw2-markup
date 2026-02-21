@@ -6,8 +6,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/stringify.d.mts",
-      "default": "./dist/stringify.mjs"
+      "types": "./dist/stringify.d.ts",
+      "default": "./dist/stringify.js"
     },
     "./package.json": "./package.json"
   },
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown src/stringify.ts --minify",
+    "build": "tsdown src/stringify.ts",
     "test": "vitest run",
     "test:watch": "vitest"
   },
