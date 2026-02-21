@@ -39,19 +39,17 @@ export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Roo
   // stack to keep track of open nodes
   const stack: Color[] = [];
 
-  // get current children array from stack or root
-  const currentChildren = () =>
-    stack.length
-      ? stack[stack.length - 1].children
-      : root.children;
+  // keep track of the current children array to append nodes to
+  let children = root.children;
 
+  // consume the input string
   let i = 0;
   while (i < value.length) {
-    const rest = value.slice(i);
+    const char = value[i];
 
     // line break
-    if (rest[0] === '\n') {
-      currentChildren().push({
+    if (char === '\n') {
+      children.push({
         type: 'break',
         position: cursor?.advance('\n')
       });
@@ -59,70 +57,83 @@ export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Roo
       continue;
     }
 
-    const br = rest.match(RE_BR);
-    if (br) {
-      currentChildren().push({
-        type: 'break',
-        position: cursor?.advance(br[0])
-      });
-      i += br[0].length;
-      continue;
-    }
+    // any tag
+    if (char === '<') {
+      const rest = value.slice(i);
 
-    const open = rest.match(RE_COLOR_OPEN);
-    if (open) {
-      const color = normalizeColor(open[1]?.trim() ?? '');
+      // line break
+      const br = rest.match(RE_BR);
+      if (br) {
+        children.push({
+          type: 'break',
+          position: cursor?.advance(br[0])
+        });
+        i += br[0].length;
+        continue;
+      }
 
-      // malformed close tags sometimes show up as <c> or <c/>
-      // treat them as closing tags or ignore them
-      if (color === '' || color === '/') {
-        const position = cursor?.advance(open[0]);
-        const node = stack.pop();
-        if (node && position) {
-          node.position!.end = position.end;
+      const open = rest.match(RE_COLOR_OPEN);
+      if (open) {
+        const color = normalizeColor(open[1]?.trim() ?? '');
+
+        // malformed close tags sometimes show up as <c> or <c/>
+        // treat them as closing tags or ignore them
+        if (color === '' || color === '/') {
+          const position = cursor?.advance(open[0]);
+          const node = stack.pop();
+          if (node && position) {
+            node.position!.end = position.end;
+          }
+          children = stack.length > 0 ? stack[stack.length - 1].children : root.children;
+          i += open[0].length;
+          continue;
         }
+
+        const node: Color = {
+          type: 'color',
+          color,
+          children: [],
+          position: cursor?.advance(open[0])
+        };
+        children.push(node);
+        stack.push(node);
+        children = node.children;
         i += open[0].length;
         continue;
       }
 
-      const node: Color = {
-        type: 'color',
-        color,
-        children: [],
-        position: cursor?.advance(open[0])
-      };
-      currentChildren().push(node);
-      stack.push(node);
-      i += open[0].length;
-      continue;
-    }
-
-    const close = rest.match(RE_COLOR_CLOSE);
-    if (close) {
-      const position = cursor?.advance(close[0]);
-      const node = stack.pop();
-      if (node && position) {
-        node.position!.end = position.end;
+      const close = rest.match(RE_COLOR_CLOSE);
+      if (close) {
+        const position = cursor?.advance(close[0]);
+        const node = stack.pop();
+        if (node && position) {
+          node.position!.end = position.end;
+        }
+        children = stack.length > 0 ? stack[stack.length - 1].children : root.children;
+        i += close[0].length;
+        continue;
       }
-      i += close[0].length;
-      continue;
     }
 
     // find start of next potential node
-    // the next node can only start at index 1 since index 0 is already checked for tags and line breaks
-    let next = rest.slice(1).search(/<|\n/);
+    const nextTag = value.indexOf('<', i + 1);
+    const nextNewLine = value.indexOf('\n', i + 1);
 
-    // consume rest of text if there no more potential nodes (-1)
-    if (next === -1) {
-      next = rest.length;
-    } else {
-      // account for the slice offset
-      next += 1;
+    // default to end of string
+    let next = value.length;
+
+    // if there is a tag, consume up to the tag
+    if (nextTag !== -1) {
+      next = nextTag;
+    }
+
+    // if there is a closer line break, consume up to the line break instead of the tag
+    if (nextNewLine !== -1 && nextNewLine < next) {
+      next = nextNewLine;
     }
 
     // add text node for consumed text
-    const text = rest.slice(0, next);
-    const children = currentChildren();
+    const text = value.slice(i, next);
     const last = children[children.length - 1];
 
     const position = cursor?.advance(text);
@@ -141,7 +152,7 @@ export function parseGw2Markup(input: unknown, options: ParserOptions = {}): Roo
       });
     }
 
-    i += next;
+    i = next;
   }
 
   // close any remaining open nodes
