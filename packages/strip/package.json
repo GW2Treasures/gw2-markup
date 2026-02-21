@@ -1,8 +1,16 @@
 {
   "name": "@gw2/markup-strip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strip Guild Wars 2 markup from strings",
-  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "strip", "plain", "text"],
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "strip",
+    "plain",
+    "text"
+  ],
   "type": "module",
   "exports": {
     ".": {

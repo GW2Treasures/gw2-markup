@@ -1,8 +1,15 @@
 {
   "name": "@gw2/markup-to-jsx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert Guild Wars 2 Markup AST to JSX",
-  "keywords": ["gw2", "guild wars 2", "markup", "tooltip", "ast", "jsx"],
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "ast",
+    "jsx"
+  ],
   "type": "module",
   "exports": {
     ".": {
