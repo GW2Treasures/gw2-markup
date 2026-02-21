@@ -15,6 +15,7 @@
     "dist"
   ],
   "scripts": {
+    "bench": "vitest bench",
     "build": "tsdown src/parser.ts",
     "test": "vitest run",
     "test:watch": "vitest"
