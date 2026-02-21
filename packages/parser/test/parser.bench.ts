@@ -27,7 +27,7 @@ describe('complex markup', () => {
   // Generate a mix of nested color spans and plain text to exercise the parser.
   const benchmarkInput = Array.from({ length: 120 }, (_, index) =>
     `<c=@color${index % 5}>Segment ${index} <c=#88f>${index * 3}</c></c>`
-  ).join(' ') + ' trailing text to end the line';
+  ).join('\n') + ' trailing text to end the line';
 
   bench('parse', () => {
     parseGw2Markup(benchmarkInput);
