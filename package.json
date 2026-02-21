@@ -6,7 +6,7 @@
     "changeset": "changeset",
     "test": "pnpm run -r test",
     "prerelease": "pnpm run build",
-    "release": "pnpm publish -r"
+    "release": "changeset publish"
   },
   "dependencies": {
     "@changesets/cli": "2.29.8"
