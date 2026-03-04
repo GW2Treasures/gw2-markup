@@ -15,7 +15,7 @@
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.2",
     "@changeset-bot/changelog": "0.0.4",
-    "publint": "0.3.17",
+    "publint": "0.3.18",
     "tsdown": "0.20.3"
   },
   "packageManager": "pnpm@10.30.3",
