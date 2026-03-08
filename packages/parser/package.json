@@ -45,7 +45,7 @@
     "@gw2/markup-ast": "workspace:^"
   },
   "devDependencies": {
-    "tsdown": "0.20.3",
+    "tsdown": "0.21.0",
     "typescript": "5.9.3",
     "unist-util-inspect": "8.1.0",
     "vitest": "4.0.18"
