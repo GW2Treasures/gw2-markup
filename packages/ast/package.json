@@ -43,7 +43,7 @@
     "@types/unist": "^3.0.3"
   },
   "devDependencies": {
-    "tsdown": "0.21.1",
+    "tsdown": "0.21.2",
     "typescript": "5.9.3"
   }
 }
