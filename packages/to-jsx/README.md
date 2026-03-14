@@ -39,4 +39,4 @@ const element = gw2MarkupToJsx(ast, {
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).

@@ -16,4 +16,4 @@ const ast = parseGw2Markup('Hello <c=@example>world</c>!');
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).

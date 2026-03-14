@@ -10,4 +10,4 @@ You probably don't need to use this package directly, unless you are writing you
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).

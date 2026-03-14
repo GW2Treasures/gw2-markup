@@ -58,4 +58,4 @@ import '@gw2/markup-css/styles.css';
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).
