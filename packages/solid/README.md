@@ -1,0 +1,61 @@
+# @gw2/markup-solid
+
+This package renders Guild Wars 2 markup as SolidJS elements.
+
+
+## Usage
+
+This package provides both a render function and a Solid component for rendering Guild Wars 2 markup.
+
+### Render function
+
+```ts
+import { renderGw2Markup } from '@gw2/markup-solid';
+
+const node = renderGw2Markup('Hello <c=@info>world</c>');
+```
+
+### Component
+
+```tsx
+import { Gw2Markup } from '@gw2/markup-solid';
+
+export function Example() {
+  return <Gw2Markup markup="Hello <c=@info>world</c>" />;
+}
+```
+
+### Options
+
+You can customize the components used for rendering the different markup nodes by passing a `components` prop to the `Gw2Markup` component or an options object to the `renderGw2Markup` function.
+
+| Component slot | Description | Default |
+|-|-|-|
+| `root` | The root component that wraps the entire rendered output. | passthrough component |
+| `color` | The component used to render color nodes. Receives a `color` prop with the color value (e.g. `@info`, `#ff0000`). | `span` with inline style for hex colors and a `data-gw2-markup-color` attribute for named colors |
+| `break` | The component used to render line breaks. | `br` |
+
+```tsx
+import { renderGw2Markup } from '@gw2/markup-solid';
+
+const node = renderGw2Markup('Hello <c=@info>world</c>', {
+  components: {
+    color: ({ color, children }) => (
+      <span class={`gw2-color-${color.slice(1)}`}>{children}</span>
+    ),
+  },
+});
+```
+
+### CSS styles
+
+If you are using the default color rendering, you can install [`@gw2/markup-css`](../css/) and import a shared stylesheet to apply the default styles for known named colors.
+
+```ts
+import '@gw2/markup-css/styles.css';
+```
+
+
+## License
+
+This package is licensed under the [MIT License](../LICENSE).
