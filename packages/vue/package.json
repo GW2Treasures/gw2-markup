@@ -1,0 +1,56 @@
+{
+  "name": "@gw2/markup-vue",
+  "version": "1.0.0",
+  "description": "Render Guild Wars 2 markup as Vue elements",
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "vue"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/vue.d.ts",
+      "default": "./dist/vue.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown src/vue.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "darthmaim",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  },
+  "dependencies": {
+    "@gw2/markup-ast": "workspace:^",
+    "@gw2/markup-parser": "workspace:^"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vue/server-renderer": "3.5.22",
+    "tsdown": "0.21.1",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18",
+    "vue": "3.5.22"
+  }
+}
