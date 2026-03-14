@@ -40,4 +40,4 @@ const hast = gw2MarkupToHast(ast, {
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).

@@ -37,4 +37,4 @@ The stylesheet uses CSS custom properties for the color values, so you can easil
 
 ## License
 
-This package is licensed under the [MIT License](../LICENSE).
+This package is licensed under the [MIT License](../../LICENSE).
