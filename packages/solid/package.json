@@ -1,0 +1,56 @@
+{
+  "name": "@gw2/markup-solid",
+  "version": "1.0.0",
+  "description": "Render Guild Wars 2 markup as SolidJS elements",
+  "keywords": [
+    "gw2",
+    "guild wars 2",
+    "markup",
+    "tooltip",
+    "solid",
+    "solidjs"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/solid.d.ts",
+      "default": "./dist/solid.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown src/solid.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "darthmaim",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GW2Treasures/gw2-markup.git",
+    "directory": "packages/solid"
+  },
+  "bugs": {
+    "url": "https://github.com/gw2treasures/gw2-markup/issues"
+  },
+  "dependencies": {
+    "@gw2/markup-parser": "workspace:^",
+    "@gw2/markup-to-jsx": "workspace:^"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.9.0"
+  },
+  "devDependencies": {
+    "solid-js": "1.9.11",
+    "tsdown": "0.21.1",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  }
+}

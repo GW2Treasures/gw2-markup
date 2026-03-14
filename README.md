@@ -13,6 +13,8 @@ These packages are intended to be used for most common use cases. They combine t
 
 - **[`@gw2/markup-react`](./packages/react/)**  
   This package provides a React component that renders Guild Wars 2® markup.
+- **[`@gw2/markup-solid`](./packages/solid/)**  
+  This package provides a SolidJS component that renders Guild Wars 2® markup.
 - **[`@gw2/markup-strip`](./packages/strip/)**  
   A utility that strips all markup from input strings.
 - **[`@gw2/markup-unified`](./packages/unified/)**  
