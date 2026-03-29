@@ -48,6 +48,6 @@
     "@gw2/markup-parser": "workspace:*",
     "tsdown": "0.21.5",
     "typescript": "6.0.2",
-    "vitest": "4.1.1"
+    "vitest": "4.1.2"
   }
 }
