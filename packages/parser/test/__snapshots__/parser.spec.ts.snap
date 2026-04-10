@@ -1,8 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`parseGw2Markup invalid inputs > 'function' 1`] = `
-"() => {
-  }
+"() => {}
 ==================
 root[0] (1:1-1:1, 0-0)"
 `;
