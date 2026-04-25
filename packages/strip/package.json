@@ -46,7 +46,7 @@
     "@gw2/markup-to-text": "workspace:^"
   },
   "devDependencies": {
-    "tsdown": "0.21.8",
+    "tsdown": "0.21.9",
     "typescript": "6.0.3",
     "vitest": "4.1.5"
   }
