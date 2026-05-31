@@ -16,7 +16,7 @@
     "@arethetypeswrong/core": "0.18.2",
     "@changeset-bot/changelog": "0.0.4",
     "publint": "0.3.21",
-    "tsdown": "0.22.0"
+    "tsdown": "0.22.1"
   },
   "packageManager": "pnpm@10.33.4",
   "license": "MIT"
