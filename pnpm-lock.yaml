@@ -22,8 +22,8 @@ importers:
         specifier: 0.3.21
         version: 0.3.21
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
 
   packages/ast:
     dependencies:
@@ -32,8 +32,8 @@ importers:
         version: 3.0.3
     devDependencies:
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -47,8 +47,8 @@ importers:
         version: link:../ast
     devDependencies:
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -81,8 +81,8 @@ importers:
         specifier: 19.2.7
         version: 19.2.7(react@19.2.7)
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -103,8 +103,8 @@ importers:
         specifier: 1.9.14
         version: 1.9.14
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -122,8 +122,8 @@ importers:
         specifier: workspace:*
         version: link:../parser
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -141,8 +141,8 @@ importers:
         version: link:../to-text
     devDependencies:
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -160,8 +160,8 @@ importers:
         version: 3.0.4
     devDependencies:
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -176,8 +176,8 @@ importers:
         specifier: workspace:*
         version: link:../parser
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -195,8 +195,8 @@ importers:
         specifier: workspace:*
         version: link:../parser
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -226,8 +226,8 @@ importers:
         version: 11.0.5
     devDependencies:
       tsdown:
-        specifier: 0.22.4
-        version: 0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
+        specifier: 0.22.5
+        version: 0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -1478,18 +1478,18 @@ packages:
   trough@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
 
-  tsdown@0.22.4:
-    resolution: {integrity: sha512-3a5FsNL2fH2jw3ozvFUuPMBgS0xXjX9wpZShHyB4klXelVhyaNw5Q5WA9TPCNeoGYpRZEc4OZdMx5wT4Fkma3A==}
+  tsdown@0.22.5:
+    resolution: {integrity: sha512-0iEpnuOVBGo7mPW+FlyglErHBExYOAlpLBlCl/QcTrRUJ+TF2prfzl6ipQS5VsjJejFXnmbkdh0Ta53B3stWxg==}
     engines: {node: ^22.18.0 || >=24.11.0}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/css': 0.22.4
-      '@tsdown/exe': 0.22.4
+      '@tsdown/css': 0.22.5
+      '@tsdown/exe': 0.22.5
       '@vitejs/devtools': '*'
       publint: ^0.3.8
       tsx: '*'
-      typescript: ^5.0.0 || ^6.0.0
+      typescript: ^5.0.0 || ^6.0.0 || ^7.0.0
       unplugin-unused: ^0.5.0
       unrun: '*'
     peerDependenciesMeta:
@@ -2766,7 +2766,7 @@ snapshots:
 
   trough@2.2.0: {}
 
-  tsdown@0.22.4(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37):
+  tsdown@0.22.5(@arethetypeswrong/core@0.18.5)(publint@0.3.21)(typescript@6.0.3)(unrun@0.2.37):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
