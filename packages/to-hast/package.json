@@ -44,7 +44,7 @@
     "@types/hast": "^3.0.0"
   },
   "devDependencies": {
-    "tsdown": "0.23.5",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3"
   }
 }
