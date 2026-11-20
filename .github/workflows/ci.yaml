@@ -84,7 +84,7 @@ jobs:
           git config --global user.name "gw2treasures-release-bot[bot]"
 
       - name: Create Release Pull Request
-        uses: changesets/action@v1
+        uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         with:
